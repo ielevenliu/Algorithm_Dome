@@ -1,10 +1,11 @@
 /*
 * @Author: lwl
 * @Date: 2019-12-22
-* @Description: 判断一个链表是否为回文结构，时间复杂度达到O(N)，额外空间复杂度达到O(1)
+* @Description: 鍒ゆ柇涓�涓摼琛ㄦ槸鍚︿负鍥炴枃缁撴瀯
 */
 
 #include <iostream>
+#include <stack>
 
 using namespace std;
 
@@ -19,7 +20,8 @@ struct Node {
 
 class CIsPalineroomList {
 public:
-	bool isPalineroom(Node* head) {
+	// 鏃堕棿澶嶆潅搴﹁揪鍒癘(N)锛岄澶栫┖闂村鏉傚害杈惧埌O(1)
+	bool isPalineroom_1(Node* head) {
 		bool res = true;
 		if (head == nullptr || head->next == nullptr) {
 			return res;
@@ -59,6 +61,59 @@ public:
 		low->next = pre;
 		return res;
 	}
+
+	// 鏃堕棿澶嶆潅搴﹁揪鍒癘(N)锛岄澶栫┖闂村鏉傚害杈惧埌O(N)锛岄澶栫┖闂翠负 N/2
+	bool isPalineroom_2(Node* head) {
+		bool res = true;
+		if (head == nullptr || head->next == nullptr) {
+			return res;
+		}
+		Node* low = head;
+		Node* fast = head;
+		stack<int> s;
+		while (fast->next != nullptr && fast->next->next != nullptr) {
+			low = low->next;
+			fast = fast->next->next;
+		}
+		Node* cur = low;
+		while (cur != nullptr) {
+			s.push(cur->val);
+			cur = cur->next;
+		}
+		while (head != low->next) {
+			if (head->val != s.top()) {
+				res = false;
+				break;
+			}
+			head = head->next;
+			s.pop();
+		}
+		return res;
+	}
+
+	// 鏃堕棿澶嶆潅搴﹁揪鍒癘(N)锛岄澶栫┖闂村鏉傚害杈惧埌O(N)锛岄澶栫┖闂翠负 N
+	bool isPalineroom_3(Node* head) {
+		bool res = true;
+		if (head == nullptr || head->next == nullptr) {
+			return res;
+		}
+		stack<int> s;
+		Node* cur = head;
+		while (cur != nullptr) {
+			s.push(cur->val);
+			cur = cur->next;
+		}
+		cur = head;
+		while (cur != nullptr) {
+			if (cur->val != s.top()) {
+				res = false;
+				break;
+			}
+			cur = cur->next;
+			s.pop();
+		}
+		return res;
+	}
 };
 
 class CComparator {
@@ -71,7 +126,7 @@ private:
 		head = new Node(1);
 		head->next = new Node(2);
 		head->next->next = new Node(3);
-		head->next->next->next = new Node(1);
+		head->next->next->next = new Node(2);
 		head->next->next->next->next = new Node(1);
 	}
 
@@ -88,7 +143,7 @@ public:
 	void runComparator() {
 		generalList();
 		printList();
-		bool res = isPalineroomList.isPalineroom(head);
+		bool res = isPalineroomList.isPalineroom_2(head);
 		printList();
 		cout << (res ? "is palineroom" : "no palineroom") << endl;
 	}
