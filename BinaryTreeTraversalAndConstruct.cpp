@@ -1,7 +1,7 @@
 /*
 * @Author: lwl
 * @Date: 2019-12-24
-* @Description: 重建二叉树、二叉树的递归和非递归前序 & 中序 & 后序遍历、二叉树的层序遍历
+* @Description: 重建二叉树、二叉树的递归和非递归前序 & 中序 & 后序遍历、二叉树层序遍历
 */
 
 #include <iostream>
