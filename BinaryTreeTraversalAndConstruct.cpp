@@ -1,7 +1,7 @@
 /*
 * @Author: lwl
-* @Date: 2019-12-23
-* @Description: ÖØ½¨¶ş²æÊ÷¡¢¶ş²æÊ÷µÄµİ¹éºÍ·Çµİ¹éÇ°Ğò & ÖĞĞò & ºóĞò±éÀú¡¢¶ş²æÊ÷µÄ²ãĞò±éÀú
+* @Date: 2019-12-24
+* @Description: é‡å»ºäºŒå‰æ ‘ã€äºŒå‰æ ‘çš„é€’å½’å’Œéé€’å½’å‰åº & ä¸­åº & ååºéå†ã€äºŒå‰æ ‘çš„å±‚åºéå†
 */
 
 #include <iostream>
@@ -31,7 +31,7 @@ private:
 	}
 
 public:
-	// µİ¹é±éÀú
+	// é€’å½’éå†
 	void preTraversalBiTreeInterface(TreeNode* treeNode) {
 		if (treeNode != nullptr) {
 			cout << treeNode->val << " ";
@@ -57,7 +57,7 @@ public:
 	}
 
 public:
-	// ·Çµİ¹é±éÀú
+	// éé€’å½’éå†
 	void levelTraversalBiTreeInterface(TreeNode* treeNode) {
 		cout << "Level-Traversal: ";
 		if (treeNode != nullptr) {
@@ -115,7 +115,7 @@ public:
 		cout << endl;
 	}
 
-	// ·Çµİ¹éºóĞò±éÀú£¬two stack
+	// éé€’å½’ååºéå†ï¼Œtwo stack
 	void orderTraversalBiTreeInterface1(TreeNode* treeNode, bool noRecursive) {
 		cout << "Unrecur-Order_Traversal: ";
 		if (treeNode != nullptr) {
@@ -141,7 +141,7 @@ public:
 		cout << endl;
 	}
 
-	// ·Çµİ¹éºóĞò±éÀú£¬only one stack
+	// éé€’å½’ååºéå†ï¼Œonly one stack
 	void orderTraversalBiTreeInterface2(TreeNode* treeNode, bool noRecursive) {
 		cout << "Unrecur-Order-Traversal: ";
 		stack<TreeNode*> sNode;
@@ -165,7 +165,7 @@ public:
 		cout << endl;
 	}
 
-	// ·Çµİ¹éºóĞò±éÀú£¬only one stack
+	// éé€’å½’ååºéå†ï¼Œonly one stack
 	void orderTraversalBiTreeInterface3(TreeNode* treeNode, bool unRecur) {
 		cout << "UnRecur-Order-Traversal: ";
 		if (treeNode != nullptr) {
