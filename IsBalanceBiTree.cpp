@@ -1,7 +1,7 @@
 /*
 * @Author: lwl
 * @Date: 2019-12-29
-* @Description: 判断是否是平衡二叉树
+* @Description: 鍒ゆ柇鏄惁鏄钩琛′簩鍙夋爲
 */
 
 #include <iostream>
