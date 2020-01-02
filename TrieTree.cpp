@@ -1,7 +1,7 @@
 /*
 * @Author: lwl
 * @Date: 2020-01-02
-* @Decsription: ǰ׺��
+* @Decsription: 前缀树
 */
 
 #include <iostream>
