@@ -1,7 +1,7 @@
 /*
 * @Author: lwl
 * @Date: 2020-01-10
-* @Description: KMP�㷨
+* @Description: KMP算法
 */
 
 #include <iostream>
