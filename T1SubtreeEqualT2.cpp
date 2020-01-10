@@ -1,7 +1,7 @@
 /*
 * @Author: lwl
 * @Date: 2020-01-10
-* @Description: 二叉树T1是否包含二叉树T2
+* @Description: 浜屽弶鏍慣1鏄惁鍖呭惈浜屽弶鏍慣2
 */
 
 #include <iostream>
